@@ -20,7 +20,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::resource('beaches', [BeachController::class])->middleware('auth:sanctum');
+Route::resource('beaches', BeachController::class)->middleware('auth:sanctum');
 
 Route::post('/register', [AuthController::class, 'register']);
 
