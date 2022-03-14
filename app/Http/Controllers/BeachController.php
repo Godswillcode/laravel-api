@@ -44,7 +44,7 @@ class BeachController extends Controller
             'image' => 'required',
         ]);
 
-        $user = User::create([
+        $beach = Beach::create([
                 'name' => $validatedData['name'],
                 'type' => $validatedData['type'],
                 'description' => $validatedData['description'],

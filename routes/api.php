@@ -16,9 +16,9 @@ use App\Http\Controllers\BeachController;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
 
 Route::resource('beaches', BeachController::class)->middleware('auth:sanctum');
 
