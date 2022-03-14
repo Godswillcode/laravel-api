@@ -62,6 +62,9 @@ class BeachController extends Controller
      */
     public function show(Beach $beach)
     {
+        if(!$beach){
+            return response([],404);
+        }
         return response($beach,201);
     }
 
@@ -85,6 +88,9 @@ class BeachController extends Controller
      */
     public function update(Request $request, Beach $beach)
     {
+        if(!$beach){
+            return response([],404);
+        }
         $validatedData = $request->validate([
             'name' => 'required',
             'type' => 'required',
@@ -110,6 +116,9 @@ class BeachController extends Controller
      */
     public function destroy(Beach $beach)
     {
+        if(!$beach){
+            return response([],404);
+        }
         $beach->delete();
         return response(['message'=>'Beach Deleted'],201);
 
