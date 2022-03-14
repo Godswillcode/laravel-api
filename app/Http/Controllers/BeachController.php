@@ -110,7 +110,7 @@ class BeachController extends Controller
      */
     public function destroy(Beach $beach)
     {
-        $beach->destroy();
+        $beach->delete();
         return response(['message'=>'Beach Deleted'],201);
 
     }
