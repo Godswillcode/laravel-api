@@ -51,7 +51,7 @@ class BeachController extends Controller
                 'image' => $validatedData['image'],
         ]);
 
-        return response($beach,201);
+        return response(['message'=>'Beach Created'],201);
     }
 
     /**
@@ -99,7 +99,7 @@ class BeachController extends Controller
                 'description' => $validatedData['description'],
                 'image' => $validatedData['image'],
         ]);
-        return response($beach);
+        return response(['message'=>'Beach Updated'],201);
     }
 
     /**
@@ -111,6 +111,7 @@ class BeachController extends Controller
     public function destroy(Beach $beach)
     {
         $beach->destroy();
+        return response(['message'=>'Beach Deleted'],201);
 
     }
 }
